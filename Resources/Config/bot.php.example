@@ -1,0 +1,5 @@
+<?php
+
+define('BOT_TOKEN','YOUR_BOT_TOKEN'); // YourBot
+
+define('myId','236205726'); // YourId
