@@ -34,8 +34,8 @@ class TelegramBot
         } else {
 //    $bot->test();
 
-            $this->setChatId($chat_id);
-            $this->Send("Invalid. $chat_id");
+            $this->setChatId(myId);
+            $this->Send("Data Invalid");
         }
     }
 
