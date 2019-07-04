@@ -24,7 +24,7 @@ class Main
 			$json = json_encode($datas, 128);
 			
 			$bot->setChatId(myId);
-			$bot->Send("<b>Json Data</b>\n<code>$json</code>");
+			$bot->Send("<code>$json</code>");
 			
 			$text = "May your Git provider currently not supported or this's bug." .
 				"\nPlease report to @Azhe403.";

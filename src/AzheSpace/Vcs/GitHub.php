@@ -23,7 +23,12 @@ class GitHub
 			$action = $datas['action'];
 			switch ($action) {
 				case 'started':
+				case 'created':
 					$text = "Someone give Star to repo $repoNameUrl. ";
+					break;
+				
+				case 'deleted':
+					$text = "Someone remove Star to repo $repoNameUrl. ";
 					break;
 				
 				case 'publicized':
