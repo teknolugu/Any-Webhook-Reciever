@@ -7,7 +7,7 @@ require_once './src/autoload.php';
 require_once './vendor/autoload.php';
 require_once './../Resources/Config/bot.php';
 
-$bot = new PHPTelebot(BOT_TOKEN, '@AzheBot');
+$bot = new PHPTelebot(BOT_TOKEN, BOT_USERNAME);
 
 $bot->cmd('/start', 'Hi, press /help');
 
