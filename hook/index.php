@@ -11,6 +11,8 @@ $bot = new PHPTelebot(BOT_TOKEN, BOT_USERNAME);
 
 $bot->cmd('/start', 'Hi, press /help');
 
+$bot->cmd('ping', 'Pong!');
+
 $bot->cmd('/id', function () {
     $message = Bot::message();
     $text = "your id is " . $message['chat']['id'];
@@ -23,8 +25,9 @@ $bot->cmd('/gitintegration', function () {
     $git = new Git();
     $text = "Sambungkan bot ke repository Anda. " .
         "\nSilakan pasang url di bawah ini di pengaturan Webhook\Integrasi.\n" . $git->getUrl();
-
-    $text .= "\n\nPenyedia yang di dukung: GitLab, GitHub";
+	
+	$text .= "\n\nPenyedia yang di dukung: GitLab, GitHub" .
+		"\nUntuk konfigurasi GitHub, <b>Content type</b> di set ke <code>application/jeson</code>";
     $options = ['parse_mode' => 'html', 'reply' => true, 'disable_web_page_preview' => true];
 
     Bot::sendMessage($text, $options);
