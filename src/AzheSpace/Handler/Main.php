@@ -49,6 +49,9 @@ class Main
 			$bot->setChatId($chat_id);
 			$bot->Send($text);
 		} else {
+			include_once './Resources/Pages/home.php';
+			
+			echo true;
 			$bot->setChatId(myId);
 			$bot->Send("Data Invalid");
 		}
