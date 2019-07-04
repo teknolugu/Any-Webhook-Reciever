@@ -1,0 +1,13 @@
+{
+  "name": "azhespace/git-event-integrator",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Azhe Kun",
+      "email": "azhe403@gmail.com"
+    }
+  ],
+  "require": {
+    "radyakaze/phptelebot": "^1.3"
+  }
+}
