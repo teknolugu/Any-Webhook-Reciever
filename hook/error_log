@@ -1,0 +1,6 @@
+[03-Jul-2019 22:24:40 Asia/Jakarta] PHP Warning:  require_once(./vendor/autoload.php): failed to open stream: No such file or directory in /home/azhespac/integrate.azhe.space/hook/index.php on line 3
+[03-Jul-2019 22:24:40 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required './vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/azhespac/integrate.azhe.space/hook/index.php on line 3
+[03-Jul-2019 22:37:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class 'src\AzheSpace\Modules\Git' not found in /home/azhespac/integrate.azhe.space/hook/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/azhespac/integrate.azhe.space/hook/index.php on line 12
