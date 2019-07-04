@@ -9,6 +9,9 @@ use src\AzheSpace\Vcs\GitLab;
 
 class Main
 {
+	/**
+	 *
+	 */
 	public function handle()
 	{
 		$input = file_get_contents("php://input");

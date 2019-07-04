@@ -3,6 +3,10 @@
 spl_autoload_extensions(".php");
 spl_autoload_register();
 
+/**
+ * @param $class_name
+ * @throws Exception
+ */
 function linux_namespaces_autoload($class_name)
 {
     /* use if you need to lowercase first char *
