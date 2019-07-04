@@ -21,13 +21,13 @@ class Main
 		$bot = new TelegramBot(BOT_TOKEN);
 		
 		if (is_array($datas)) {
-			$json = json_encode($datas, 128, JSON_UNESCAPED_SLASHES);
+			$json = json_encode($datas, 128);
 			
 			$bot->setChatId(myId);
-			$bot->Send("<code>$json</code>");
+			$bot->Send("<b>Json Data</b>\n<code>$json</code>");
 			
 			$text = "May your Git provider currently not supported or this's bug." .
-				"\nPlease wait.";
+				"\nPlease report to @Azhe403.";
 			
 			switch (true) {
 				// GitLab Detect
@@ -39,6 +39,7 @@ class Main
 				
 				// GitHub detect
 				case WordUtil::isContain($datas['compare'], 'github'):
+				case WordUtil::isContain($datas['repository']['html_url'], 'github'):
 				case $datas['ref'] != '':
 					$github = new GitHub();
 					$text = $github->parseJson($json);

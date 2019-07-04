@@ -11,7 +11,7 @@ if (strlen($_GET['chat_id']) >= 9) {
 	echo "Sambungkan bot ke repository Anda." .
 		"<br>Silakan pasang url di bawah ini di pengaturan Webhook\Integrasi." .
 		"<br>https://integrate.azhe.space/236205726.php" .
-		"<br><br>Penyedia yang di dukung: GitLab, GitHub";
+		"<br><br>Penyedia yang di dukung: GitLab, GitHub.";
 } else {
 	print "you can try send /start in Bot";
 	header('Location: https://azhe.space');
