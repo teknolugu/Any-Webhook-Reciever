@@ -22,10 +22,10 @@ class TelegramBot
 		$chat_id = $_GET['chat_id'];
 		
 		if (is_array($datas)) {
-			$json = json_encode($datas, 128);
+            $json = json_encode($datas, 128, JSON_UNESCAPED_SLASHES);
 			
 			$this->setChatId(myId);
-			$this->Send($json);
+            $this->Send("<code>$json</code>");
 			
 			$text = "May your Git provider currently not supported";
 			
