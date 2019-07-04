@@ -20,10 +20,22 @@ class GitHub
 		$repoNameUrl = "<a href='$repoUrl'>$repoName</a>";
 		
 		if ($datas['action'] != '') {
-			$isRepoPrivate = $datas['repository']['private'];
-			
-			$repoVisibility = Converters::intToStr($isRepoPrivate, "Public", "Private");
-			$text = "Repo <a href='$repoUrl'>$repoName</a> Publicized changed to $repoVisibility";
+			$action = $datas['action'];
+			switch ($action) {
+				case 'started':
+					$text = "Someone give Star to repo $repoNameUrl. ";
+					break;
+				
+				case 'publicized':
+					$isRepoPrivate = $datas['repository']['private'];
+					$repoVisibility = Converters::intToStr($isRepoPrivate, "Public", "Private");
+					$text = "Repo <a href='$repoUrl'>$repoName</a> Publicized changed to $repoVisibility";
+					break;
+				
+				default:
+					$text = "Action may undetected. Please wait..";
+					break;
+			}
 		} elseif (WordUtil::isContain($datas['ref'], 'tags')) {
 			$ref = $datas['ref'];
 			$pecahRef = explode('/', $ref);
@@ -31,6 +43,12 @@ class GitHub
 			
 			$text = "<b>New Relase</b> of $repoNameUrl." .
 				"\nVersion $version";
+		} elseif ($datas['hook'] != '') {
+			$hookActive = $datas['hook']['active'];
+			$hookContenType = $datas['hook']['config']['content_type'];
+			$hookInSsl = $datas['hook']['config']['insecure_ssl'];
+			$text = "<b>WebHook setting</b> for $repoNameUrl saved" .
+				"\nContent type: $hookContenType";
 		} else {
 			$commits = $datas['commits'];
 			$commitList = '';
