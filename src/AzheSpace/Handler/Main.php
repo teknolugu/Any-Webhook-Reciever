@@ -54,7 +54,8 @@ class Main
 			echo true;
 			$bot->setChatId(myId);
 			
-			$text = "<b>Data Invalid</b>" . "\nChatId: $chat_id";
+			$text = "<b>Data Invalid</b>" .
+				"\nChatId: $chat_id";
 			$bot->Send($text);
 		}
 	}
