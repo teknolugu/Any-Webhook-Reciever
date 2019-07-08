@@ -39,7 +39,9 @@ class Main
 				
 				// GitHub detect
 				case WordUtil::isContain($datas['compare'], 'github'):
-				case WordUtil::isContain($datas['repository']['html_url'], 'github'):
+				case WordUtil::isContain($datas['organization']['url'], 'github'):
+				case WordUtil::isContain($datas['repository']['url'], 'github'):
+				case WordUtil::isContain($datas['sender']['url'], 'github'):
 				case $datas['ref'] != '':
 					$github = new GitHub();
 					$text = $github->parseJson($json);

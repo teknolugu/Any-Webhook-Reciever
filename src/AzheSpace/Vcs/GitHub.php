@@ -2,6 +2,7 @@
 
 namespace src\AzheSpace\Vcs;
 
+use src\AzheSpace\Logger\TelegramLog;
 use src\AzheSpace\Utils\Converters;
 use src\AzheSpace\Utils\WordUtil;
 
@@ -49,27 +50,37 @@ class GitHub
 			$text = "<b>New Relase</b> of $repoNameUrl." .
 				"\nVersion $version";
 		} elseif ($datas['hook'] != '') {
-			$hookActive = $datas['hook']['active'];
-			$hookContenType = $datas['hook']['config']['content_type'];
-			$hookInSsl = $datas['hook']['config']['insecure_ssl'];
-			$text = "<b>WebHook setting</b> for $repoNameUrl saved" .
-				"\nContent type: $hookContenType";
-		} else {
+			$hook_type = $datas['hook']['type'];
+			switch ($hook_type) {
+				case 'Organization':
+					$orgName = $datas['organization']['login'];
+					$orgUrl = str_replace(['api.', 'orgs/'], '', $datas['organization']['url']);
+					$orgNameUrl = "<a href='$orgUrl'>$orgName</a>";
+					$text = "<b>WebHook</b> for $orgNameUrl Organization connected succefully.";
+					break;
+				
+				default:
+					$text = "<b>WebHook setting</b> for $repoNameUrl saved";
+					break;
+			}
+		} elseif ($datas['commits'] != '') {
 			$commits = $datas['commits'];
 			$commitList = '';
 			$no = 1;
 			foreach ($commits as $key => $val) {
 				$message = $val['message'];
-				$url = $val['url'];
+				$orgUrl = $val['url'];
 				$authorName = $val['author']['name'];
 				
-				$commitList .= "\n$no. <a href='$url'>$message</a>" . " By " . $authorName;
+				$commitList .= "\n$no. <a href='$orgUrl'>$message</a>" . " By " . $authorName;
 				$no++;
 			}
 			
 			$text = "<b>GitHub Events.</b>" .
 				"\n" . trim($commitList);
 		}
+		
+		TelegramLog::logToMe($datas);
 		
 		return $text;
 	}
