@@ -17,7 +17,7 @@ class GitHub
 	{
 		$datas = json_decode($json, true);
 		$repoUrl = $datas['repository']['html_url'];
-		$repoName = $datas['repository']['full_name'];
+		$repoName = $datas['repository']['name'];
 		$repoNameUrl = "<a href='$repoUrl'>$repoName</a>";
 		
 		if ($datas['action'] != '') {
@@ -71,16 +71,19 @@ class GitHub
 				$message = $val['message'];
 				$orgUrl = $val['url'];
 				$authorName = $val['author']['name'];
-				
-				$commitList .= "\n$no. <a href='$orgUrl'>$message</a>" . " By " . $authorName;
+				$addedCount = count($val['added']);
+				$removedCount = count($val['removed']);
+				$modifiedCount = count($val['modified']);
+				$commitList .= "\n$no. <a href='$orgUrl'>$message</a> By $authorName" .
+					"\n => Added: $addedCount, Removed: $removedCount, Modified: $modifiedCount\n";
 				$no++;
 			}
 			
-			$text = "<b>GitHub Events.</b>" .
+			$text = "<b>GitHub Push Events.</b>" .
 				"\n" . trim($commitList);
 		}
-		
-		TelegramLog::logToMe($datas);
+
+//		TelegramLog::logToMe($datas);
 		
 		return $text;
 	}
