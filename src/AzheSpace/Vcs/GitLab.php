@@ -36,7 +36,7 @@ class GitLab
 
 //            $total_commit_count = $datas['total_commits_count'];
 				
-				$text = "<b>GitLab $event_name</b> by <b>$username</b>" . "$listCommit";
+				$text = "🔨 <b>GitLab $event_name</b> by <b>$username</b>" . "$listCommit";
 				break;
 			case 'issue':
 				$atributes = $datas['object_attributes'];

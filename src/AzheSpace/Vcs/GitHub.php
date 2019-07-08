@@ -79,7 +79,7 @@ class GitHub
 				$no++;
 			}
 			
-			$text = "<b>GitHub Push Events.</b>" .
+			$text = "🔨 <b>GitHub Push Events.</b>" .
 				"\n" . trim($commitList);
 		}
 
