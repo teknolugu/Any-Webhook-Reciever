@@ -11,16 +11,16 @@ class AppVeyor
 	 *
 	 * @param $payload
 	 */
-	public function __construct($payload)
-	{
-		$this->execute($payload);
-	}
+//	public function __construct($payload)
+//	{
+//		return $this->execute($payload);
+//	}
 	
 	/**
 	 * @param $payload
 	 * @return string
 	 */
-	private function execute($payload)
+	public function execute($payload)
 	{
 		$json = json_encode($payload, true);
 		

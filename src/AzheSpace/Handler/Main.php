@@ -50,7 +50,8 @@ class Main
 				
 				// Appveyor
 				case WordUtil::isContain($datas['eventData']['buildUrl'], 'appveyor'):
-					$text = new AppVeyor($json);
+					$appveyor = new AppVeyor();
+					$text = $appveyor->execute($json);
 					break;
 			}
 			

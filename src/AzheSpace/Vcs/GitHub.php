@@ -2,12 +2,19 @@
 
 namespace src\AzheSpace\Vcs;
 
-use src\AzheSpace\Logger\TelegramLog;
 use src\AzheSpace\Utils\Converters;
 use src\AzheSpace\Utils\WordUtil;
 
 class GitHub
 {
+	/**
+	 * GitHub constructor.
+	 *
+	 * @param $json
+	 */
+//	public function __construct($json) {
+//		return $this->parseJson($json);
+//	}
 	
 	/**
 	 * @param $json
