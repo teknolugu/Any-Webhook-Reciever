@@ -9,10 +9,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
+<?php
+$chat_id = $_GET['chat_id'];
+
+?>
 <div class="container">
     <h3>Sambungkan bot ke repository Anda.</h3>
     <p>Silakan pasang url di bawah ini di pengaturan Webhook\Integrasi. <br>
-        https://integrate.azhe.space/236205726.php</p>
+        https://integrate.winten.space/<?= $chat_id; ?>.php</p>
 
     <p>Penyedia layanan Git yang di dukung: GitLab, GitHub. (yang lain segera)</p>
 </div>
