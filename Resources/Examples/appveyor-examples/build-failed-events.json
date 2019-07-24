@@ -1,0 +1,63 @@
+{
+  "eventName": "build_failure",
+  "eventData": {
+	"passed": false,
+	"failed": true,
+	"status": "failed",
+	"started": "7\/23\/2019 2:18 PM",
+	"finished": "7\/23\/2019 2:19 PM",
+	"duration": "00:00:35.6957703",
+	"projectId": 590575,
+	"projectName": "WinNetMeter",
+	"buildId": 26182850,
+	"buildNumber": 64,
+	"buildVersion": "1.0.64",
+	"repositoryProvider": "gitHub",
+	"repositoryScm": "git",
+	"repositoryName": "WinTenDev\/WinNetMeter",
+	"branch": "master",
+	"commitId": "0199f634b5",
+	"commitAuthor": "Muchammad Arfan",
+	"commitAuthorEmail": "muchammadarfan76@gmail.com",
+	"commitAuthorUsername": "Arpha01",
+	"commitDate": "7\/23\/2019 2:15 PM",
+	"commitMessage": "Bringing back old button icon",
+	"commitMessageExtended": "",
+	"committerName": "Muchammad Arfan",
+	"committerEmail": "muchammadarfan76@gmail.com",
+	"buildUrl": "https:\/\/ci.appveyor.com\/project\/Azhe403\/winnetmeter\/builds\/26182850",
+	"commitUrl": "https:\/\/github.com\/WinTenDev\/WinNetMeter\/commit\/0199f634b5",
+	"notificationSettingsUrl": "https:\/\/ci.appveyor.com\/notifications",
+	"isPullRequest": false,
+	"messages": [ ],
+	"jobs": [
+	  {
+		"id": "r3icjaepnhy2qyfa",
+		"name": "",
+		"passed": false,
+		"failed": true,
+		"status": "Failed",
+		"started": "7\/23\/2019 2:18 PM",
+		"finished": "7\/23\/2019 2:19 PM",
+		"duration": "00:00:35.6957703",
+		"messages": [ ],
+		"messagesTotal": 0,
+		"messagesError": 0,
+		"compilationMessages": [
+		  {
+			"category": "error",
+			"message": "The reference assemblies for framework \".NETFramework,Version=v4.7\" were not found. To resolve this, install the SDK or Targeting Pack for this framework version or retarget your application to a version of the framework for which you have the SDK or Targeting Pack installed. Note that assemblies will be resolved from the Global Assembly Cache (GAC) and will be used in place of reference assemblies. Therefore your assembly may not be correctly targeted for the framework you intend.",
+			"details": "MSB3644",
+			"fileName": "..\\..\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\Microsoft.Common.CurrentVersion.targets",
+			"line": 1175,
+			"column": 5,
+			"projectName": "Updater",
+			"projectFileName": "Updater\\Updater.csproj",
+			"created": "2019-07-23T14:19:07.7386305+00:00"
+		  }
+		],
+		"artifacts": [ ]
+	  }
+	]
+  }
+}

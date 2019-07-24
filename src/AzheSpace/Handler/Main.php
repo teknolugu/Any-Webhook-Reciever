@@ -4,6 +4,7 @@ namespace src\AzheSpace\Handler;
 
 use src\AzheSpace\Bot\Telegram\TelegramBot;
 use src\AzheSpace\Utils\WordUtil;
+use src\AzheSpace\Vcs\AppVeyor;
 use src\AzheSpace\Vcs\GitHub;
 use src\AzheSpace\Vcs\GitLab;
 
@@ -45,6 +46,11 @@ class Main
 				case $datas['ref'] != '':
 					$github = new GitHub();
 					$text = $github->parseJson($json);
+					break;
+				
+				// Appveyor
+				case WordUtil::isContain($datas['eventData']['buildUrl'], 'appveyor'):
+					$text = new AppVeyor($json);
 					break;
 			}
 			
