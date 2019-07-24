@@ -18,7 +18,12 @@ class GitHub
 		$datas = json_decode($json, true);
 		$repoUrl = $datas['repository']['html_url'];
 		$repoName = $datas['repository']['name'];
+		$repoFullName = $datas['repository']['full_name'];
 		$repoNameUrl = "<a href='$repoUrl'>$repoName</a>";
+		$repoFullNameUrl = "<a href='$repoUrl'>$repoFullName</a>";
+		$ref = $datas['ref'];
+		$pecahRef = explode('/', $ref);
+		$upstream = $pecahRef[2];
 		
 		if ($datas['action'] != '') {
 			$action = $datas['action'];
@@ -43,8 +48,6 @@ class GitHub
 					break;
 			}
 		} elseif (WordUtil::isContain($datas['ref'], 'tags')) {
-			$ref = $datas['ref'];
-			$pecahRef = explode('/', $ref);
 			$version = $pecahRef[2];
 			
 			$text = "<b>New Relase</b> of $repoNameUrl." .
@@ -80,7 +83,8 @@ class GitHub
 			}
 			
 			$text = "🔨 <b>GitHub Push Events.</b>" .
-				"\n" . trim($commitList);
+				"\n🧰 Repo: $repoFullNameUrl:$upstream" .
+				"\n\n" . trim($commitList);
 		}
 
 //		TelegramLog::logToMe($datas);
