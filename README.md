@@ -16,6 +16,6 @@ Jika Anda ingin memasang untuk bot Anda sendiri, Anda bisa dengan cara mengunduh
 **Catatan:** Sangat di sarankan sekali Server mendukung **HTTPS**.
 - Contoh: https://integrate.winten.space
 
-Adapun contoh dari yang sudah berjalan dapat ditemukan di [WinTen Beta Bot](https://t.me/WinTenBetaBot)
+Adapun contoh dari yang sudah berjalan dapat ditemukan di [WinTen Dev Bot](https://t.me/WinTenDevBot)
 
 _Pull request are very Welcome_
