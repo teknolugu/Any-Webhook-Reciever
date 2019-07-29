@@ -1,6 +1,6 @@
 <?php
 
-namespace src\AzheSpace\Utils;
+namespace src\WinTenDev\Utils;
 
 class WordUtil
 {

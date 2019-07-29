@@ -1,12 +1,12 @@
 <?php
 
-namespace src\AzheSpace\Handler;
+namespace src\WinTenDev\Handler;
 
-use src\AzheSpace\Bot\Telegram\TelegramBot;
-use src\AzheSpace\Utils\WordUtil;
-use src\AzheSpace\Vcs\AppVeyor;
-use src\AzheSpace\Vcs\GitHub;
-use src\AzheSpace\Vcs\GitLab;
+use src\WinTenDev\Bot\Telegram\TelegramBot;
+use src\WinTenDev\Utils\WordUtil;
+use src\WinTenDev\Vcs\AppVeyor;
+use src\WinTenDev\Vcs\GitHub;
+use src\WinTenDev\Vcs\GitLab;
 
 class Main
 {

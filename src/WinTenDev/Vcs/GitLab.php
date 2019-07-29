@@ -1,6 +1,6 @@
 <?php
 
-namespace src\AzheSpace\Vcs;
+namespace src\WinTenDev\Vcs;
 
 class GitLab
 {

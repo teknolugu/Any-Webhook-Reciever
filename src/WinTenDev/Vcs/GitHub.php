@@ -1,9 +1,9 @@
 <?php
 
-namespace src\AzheSpace\Vcs;
+namespace src\WinTenDev\Vcs;
 
-use src\AzheSpace\Utils\Converters;
-use src\AzheSpace\Utils\WordUtil;
+use src\WinTenDev\Utils\Converters;
+use src\WinTenDev\Utils\WordUtil;
 
 class GitHub
 {

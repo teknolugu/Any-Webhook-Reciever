@@ -1,9 +1,6 @@
 <?php
 
-namespace src\AzheSpace\Bot\Telegram;
-
-use src\AzheSpace\Vcs\GitHub;
-use src\AzheSpace\Vcs\GitLab;
+namespace src\WinTenDev\Bot\Telegram;
 
 class TelegramBot
 {
@@ -14,46 +11,6 @@ class TelegramBot
 	{
 		$this->bot_token = $bot_token;
 	}
-	
-	/**
-	 *
-	 */
-//	public function handle()
-//	{
-////		$input = file_get_contents("php://input");
-////		$datas = json_decode($input, true);
-//		$chat_id = $_GET['chat_id'];
-//		$datas = [];
-//
-//		if (is_array($datas)) {
-//			$json = json_encode($datas, 128, JSON_UNESCAPED_SLASHES);
-//
-//			$this->setChatId(myId);
-//			$this->Send("<code>$json</code>");
-//
-//			$text = "May your Git provider currently not supported";
-//
-//			switch (true) {
-//				case $datas['event_name'] != '':
-//					$gitlab = new GitLab();
-//					$text = $gitlab->parseJson($json);
-//					break;
-//
-//				case $datas['ref'] != '':
-//					$github = new GitHub();
-//					$text = $github->parseJson($json);
-//					break;
-//			}
-//
-//			$this->setChatId($chat_id);
-//			$this->Send($text);
-//		} else {
-////    $bot->test();
-//
-//			$this->setChatId(myId);
-//			$this->Send("Data Invalid");
-//		}
-//	}
 	
 	/**
 	 * @param $chat_id
