@@ -1,12 +1,20 @@
-# Git-Event-Integrator
+# Dev-Event Integrator
 Adalah sebuah Bot yang dapat melanjutkan Git atau Build Event ke Telegram via Bot. Di tulis dengan PHP
 
 # To-Do
-Git-Event Integrator akan mendukung beberapa penyedia layanan Git, dkk seperti: 
+Git-Event Integrator akan mendukung beberapa penyedia layanan Git seperti: 
 - [x] GitLab
 - [x] GitHub
 - [ ] AzureGit
+- [ ] BitBucket
+
+Selain Git juga akan mendukung beberapa penyedia layanan CI/CD seperti:
 - [ ] AppVeyor CI
+- [ ] Travis CI
+- [ ] Semaphore CI
+- [ ] Circle CI
+- [ ] TeamCity
+- [ ] 
 
 Beberapa penyedia layanan lainnya akan segera di dukung.
 
