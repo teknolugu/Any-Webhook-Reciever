@@ -52,12 +52,19 @@ class GitHub
 
                     } else if ($datas['check_run'] != "") {
                         $taskName = "Check Run";
-                        $status = $datas['check_run']['status'];
-                        $detailUrl = $datas['check_run']['details_url'];
+	                    $check_run = $datas['check_run'];
+	                    $status = $check_run['status'];
+	                    $detailUrl = $check_run['details_url'];
                         $detailName = "";
                         switch (true) {
                             case WordUtil::isContain($detailUrl, 'visualstudio'):
-                                $detailName = "VSTS (Azure DevOps)";
+	                            $name = "VSTS (Azure DevOps)";
+	                            $output = $check_run['output'];
+	                            $title = $output['title'];
+	                            $summary = $output['summary'];
+	                            $detailName = "$name " .
+		                            "\n$title" .
+		                            "\n$summary";
                                 break;
 
                         }
