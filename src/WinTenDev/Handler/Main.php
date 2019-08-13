@@ -3,6 +3,7 @@
 namespace src\WinTenDev\Handler;
 
 use src\WinTenDev\Bot\Telegram\TelegramBot;
+use src\WinTenDev\Logger\TelegramLog;
 use src\WinTenDev\Utils\WordUtil;
 use src\WinTenDev\Vcs\AppVeyor;
 use src\WinTenDev\Vcs\GitHub;
@@ -11,13 +12,14 @@ use src\WinTenDev\Vcs\GitLab;
 class Main
 {
 	/**
-	 *
+	 * @param string $chat_id
+	 * @return string
 	 */
-	public function handle()
+	final public function handle(string $chat_id): string
 	{
 		$input = file_get_contents("php://input");
 		$datas = json_decode($input, true);
-		$chat_id = $_GET['chat_id'];
+//		$chat_id = $_GET['chat_id'];
 		
 		$bot = new TelegramBot(BOT_TOKEN);
 		
@@ -56,7 +58,7 @@ class Main
 			}
 			
 			$bot->setChatId($chat_id);
-			$bot->Send($text);
+			$res = $bot->Send($text);
 		} else {
 			include_once './Resources/Pages/home.php';
 			
@@ -65,7 +67,11 @@ class Main
 			
 			$text = "<b>Data Invalid</b>" .
 				"\nChatId: $chat_id";
-			$bot->Send($text);
+			$res = $bot->Send($text);
 		}
+		
+		TelegramLog::logActivity($res);
+		
+		return $res;
 	}
 }

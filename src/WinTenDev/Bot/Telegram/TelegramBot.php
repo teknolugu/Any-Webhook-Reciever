@@ -7,23 +7,25 @@ class TelegramBot
 	private $chat_id;
 	private $bot_token;
 	
-	public function __construct($bot_token)
+	public function __construct(string $bot_token)
 	{
 		$this->bot_token = $bot_token;
 	}
 	
 	/**
 	 * @param $chat_id
+	 * @return string
 	 */
-	public function setChatId($chat_id)
+	final public function setChatId(string $chat_id): string
 	{
-		$this->chat_id = $chat_id;
+		return $this->chat_id = $chat_id;
 	}
 	
 	/**
-	 * @param $data
+	 * @param string $data
+	 * @return string
 	 */
-	public function Send($data)
+	final public function Send(string $data): string
 	{
 //        $chatid = '236205726';
 //        $chatid = '-1001198887178';
@@ -31,23 +33,24 @@ class TelegramBot
 			'chat_id'                  => $this->chat_id,
 			'parse_mode'               => 'HTML',
 			'text'                     => $data,
-			'disable_web_page_preview' => true
+			'disable_web_page_preview' => true,
 		];
 		
-		$this->apiRequest($post);
+		return $this->apiRequest($post);
 	}
 	
 	/**
-	 * @param $post
+	 * @param array $post
+	 * @return string
 	 */
-	private function apiRequest($post)
+	private function apiRequest(array $post): string
 	{
 		$method = "sendMessage";
 		$url = "https://api.telegram.org/bot" . $this->bot_token . "/" . $method;
 		
 		$header = [
 			"X-Requested-With: XMLHttpRequest",
-			"User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36"
+			"User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36",
 		];
 		
 		$ch = curl_init();
@@ -62,14 +65,8 @@ class TelegramBot
 		$error = curl_error($ch);
 		$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 		curl_close($ch);
-	}
-	
-	/**
-	 *
-	 */
-	public function test()
-	{
-		print("asd");
+		
+		return $datas;
 	}
 	
 }
