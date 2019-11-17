@@ -1,8 +1,8 @@
 <?php
 
-namespace src\WinTenDev\Logger;
+namespace WinTenDev\Logger;
 
-use src\WinTenDev\Bot\Telegram\TelegramBot;
+use WinTenDev\Bot\Telegram\TelegramBot;
 
 class TelegramLog
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace src\WinTenDev\Utils;
+namespace WinTenDev\Utils;
 
 class Converters
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace src\WinTenDev\Vcs;
+namespace WinTenDev\Vcs;
 
-use src\WinTenDev\Utils\WordUtil;
+use WinTenDev\Utils\WordUtil;
 
 class AppVeyor
 {

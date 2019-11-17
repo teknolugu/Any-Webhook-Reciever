@@ -1,13 +1,13 @@
 <?php
 
-namespace src\WinTenDev\Handler;
+namespace WinTenDev\Handler;
 
-use src\WinTenDev\Bot\Telegram\TelegramBot;
-use src\WinTenDev\Logger\TelegramLog;
-use src\WinTenDev\Utils\WordUtil;
-use src\WinTenDev\Vcs\AppVeyor;
-use src\WinTenDev\Vcs\GitHub;
-use src\WinTenDev\Vcs\GitLab;
+use WinTenDev\Bot\Telegram\TelegramBot;
+use WinTenDev\Logger\TelegramLog;
+use WinTenDev\Utils\WordUtil;
+use WinTenDev\Vcs\AppVeyor;
+use WinTenDev\Vcs\GitHub;
+use WinTenDev\Vcs\GitLab;
 
 class Main
 {

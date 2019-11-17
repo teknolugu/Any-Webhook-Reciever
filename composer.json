@@ -1,0 +1,18 @@
+{
+  "name": "wintendev/webhook-reciever",
+  "description": "continue notification any webhook event to next platform",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Azhe Kun",
+      "email": "azhe403@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "WinTenDev\\": "src/WinTenDev"
+    }
+  }
+}

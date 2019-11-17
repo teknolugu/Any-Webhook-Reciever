@@ -1,6 +1,6 @@
 <?php
 
-namespace src\WinTenDev\Bot\Telegram;
+namespace WinTenDev\Bot\Telegram;
 
 class TelegramBot
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace src\WinTenDev\Vcs;
+namespace WinTenDev\Vcs;
 
 class GitLab
 {
